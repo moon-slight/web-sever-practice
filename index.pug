@@ -1,0 +1,19 @@
+// 因為用縮排代替括弧來表示子類別，所以要特別注意縮排
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        ul
+            each item in commentsList
+                li
+                    span=(item.dataValues.name || '匿名') + ': '
+                    span=item.dataValues.message
+
+        form(action="/addComment", method="post")
+            input(tpye="input", name="name", placeholder="name")
+            textarea(name="message")
+            input(type="submit", value="send")
